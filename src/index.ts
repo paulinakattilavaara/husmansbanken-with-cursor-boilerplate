@@ -11,13 +11,7 @@ const allowedOrigins =
     : ["http://localhost:5173", "https://husman-frontend.vercel.app"];
 
 const corsOptions: cors.CorsOptions = {
-  origin: function (origin, callback) {
-    if (!origin || allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error("Not allowed by CORS"));
-    }
-  },
+  origin: allowedOrigins,
   credentials: true,
 };
 
