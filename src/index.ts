@@ -7,8 +7,8 @@ const app = express();
 // CORS configuration
 const allowedOrigins =
   process.env.NODE_ENV === "production"
-    ? ["https://your-specific-url.com"]
-    : ["http://localhost:5173", "https://your-specific-url.com"];
+    ? ["https://husman-frontend.vercel.app/"]
+    : ["http://localhost:5173", "https://husman-frontend.vercel.app/"];
 
 const corsOptions: cors.CorsOptions = {
   origin: function (origin, callback) {
