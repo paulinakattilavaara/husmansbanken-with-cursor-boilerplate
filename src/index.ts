@@ -11,7 +11,7 @@ const allowedOrigins =
     : ["http://localhost:5173", "https://husman-frontend.vercel.app"];
 
 const corsOptions: cors.CorsOptions = {
-  origin: allowedOrigins,
+  origin: "*",
   credentials: true,
 };
 
@@ -22,6 +22,10 @@ app.use(express.json());
 
 // Import routes
 app.use("/recipes", recipesRouter);
+
+app.use("/", (req, res) => {
+  res.send("Welcome to the API");
+});
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
