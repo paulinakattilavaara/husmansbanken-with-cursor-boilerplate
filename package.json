@@ -9,7 +9,7 @@
     "build": "tsc",
     "start:prod": "npm run build && node dist/index.js",
     "seed": "nodemon --exec node --loader ts-node/esm prisma/seed.ts",
-    "postinstall": "npm run build"
+    "postinstall": "prisma generate && prisma migrate deploy && npm run build"
   },
   "dependencies": {
     "@prisma/client": "^5.19.1",
