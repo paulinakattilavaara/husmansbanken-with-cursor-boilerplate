@@ -11,7 +11,7 @@ const allowedOrigins =
     : ["http://localhost:5173", "https://husman-frontend.vercel.app"];
 
 const corsOptions: cors.CorsOptions = {
-  origin: "*",
+  origin: allowedOrigins,
   credentials: true,
 };
 
