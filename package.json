@@ -2,7 +2,7 @@
   "name": "husmansbanken-boilerplate",
   "version": "1.0.0",
   "description": "",
-  "main": "api/index.js",
+  "main": "api/index.ts",
   "scripts": {
     "start": "node dist/index.js",
     "dev": "nodemon --exec node --loader ts-node/esm src/index.ts",
