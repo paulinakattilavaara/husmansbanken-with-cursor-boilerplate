@@ -23,7 +23,7 @@ app.use(express.json());
 // Import routes
 app.use("/recipes", recipesRouter);
 
-app.get("/", (req, res) => {
+app.use("/", (req, res) => {
   res.send("Welcome to the API");
 });
 
