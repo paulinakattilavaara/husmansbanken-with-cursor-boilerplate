@@ -2,14 +2,14 @@
   "name": "husmansbanken-boilerplate",
   "version": "1.0.0",
   "description": "",
-  "main": "src/index.ts",
+  "main": "dist/index.js",
   "scripts": {
     "start": "node dist/index.js",
     "dev": "nodemon --exec node --loader ts-node/esm src/index.ts",
     "build": "prisma generate && tsc",
     "start:prod": "npm run build && node dist/index.js",
     "seed": "nodemon --exec node --loader ts-node/esm prisma/seed.ts",
-    "postinstall": "npm run prisma:generate && npm run prisma:migrate && npm run build",
+    "postinstall": "npm run prisma:generate",
     "prisma:generate": "prisma generate",
     "prisma:migrate": "prisma migrate deploy",
     "vercel-build": "prisma generate && npm run build"
