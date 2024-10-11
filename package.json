@@ -6,12 +6,13 @@
   "scripts": {
     "start": "node dist/index.js",
     "dev": "nodemon --exec node --loader ts-node/esm src/index.ts",
-    "build": "tsc",
+    "build": "prisma generate && tsc",
     "start:prod": "npm run build && node dist/index.js",
     "seed": "nodemon --exec node --loader ts-node/esm prisma/seed.ts",
     "postinstall": "npm run prisma:generate && npm run prisma:migrate && npm run build",
     "prisma:generate": "prisma generate",
-    "prisma:migrate": "prisma migrate deploy"
+    "prisma:migrate": "prisma migrate deploy",
+    "vercel-build": "prisma generate && npm run build"
   },
   "dependencies": {
     "@prisma/client": "^5.19.1",

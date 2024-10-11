@@ -27,5 +27,10 @@ app.use("/", (req, res) => {
   res.send("Welcome to the API");
 });
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+// Only start the server if we're not in a Vercel environment
+if (process.env.VERCEL !== "1") {
+  const PORT = process.env.PORT || 3000;
+  app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+}
+
+export default app;
