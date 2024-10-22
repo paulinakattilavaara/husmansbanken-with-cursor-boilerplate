@@ -18,10 +18,11 @@ router.get("/:id", async (req, res, next) => {
     if (!user) {
       return res.status(404).json({ error: "User not found" });
     }
-    res.json(user); // This should send the user object as-is, without modifying the date
+    res.json(user);
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: "Internal server error" });
+    next(error);
   }
 });
 

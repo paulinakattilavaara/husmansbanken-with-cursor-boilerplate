@@ -1,6 +1,7 @@
 import express from "express";
 import cors from "cors";
 import recipesRouter from "./routes/recipes.js";
+import userRoutes from "./routes/users.js";
 
 const app = express();
 
@@ -22,6 +23,7 @@ app.use(express.json());
 
 // Import routes
 app.use("/recipes", recipesRouter);
+app.use("/api/users", userRoutes);
 
 app.get("/", (req, res) => {
   res.send("Welcome to the API");
