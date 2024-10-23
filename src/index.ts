@@ -8,7 +8,10 @@ const app = express();
 // CORS configuration
 const allowedOrigins =
   process.env.NODE_ENV === "production"
-    ? ["https://husman-frontend.vercel.app"]
+    ? [
+        "https://husman-frontend.vercel.app",
+        "https://main.d2mfv1qnw7e58a.amplifyapp.com",
+      ]
     : ["http://localhost:5173", "https://husman-frontend.vercel.app"];
 
 const corsOptions: cors.CorsOptions = {
